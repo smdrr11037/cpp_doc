@@ -5,31 +5,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="envir/" rel="next"/>
-<link href="assets/images/favicon.png" rel="icon"/>
+<link href="../window/" rel="prev"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-9.5.13" name="generator"/>
-<title>Gold Miner 开发文档</title>
-<link href="assets/stylesheets/main.7e359304.min.css" rel="stylesheet"/>
-<link href="assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<title>Model 层 - Gold Miner 开发文档</title>
+<link href="../assets/stylesheets/main.7e359304.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
 <body data-md-color-accent="cyan" data-md-color-primary="cyan" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#index">
-          Skip to content
-        </a>
 </div>
 <div data-md-component="announce">
 </div>
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Gold Miner 开发文档" class="md-header__button md-logo" data-md-component="logo" href="." title="Gold Miner 开发文档">
+<a aria-label="Gold Miner 开发文档" class="md-header__button md-logo" data-md-component="logo" href=".." title="Gold Miner 开发文档">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -45,7 +42,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Home
+              Model 层
             
           </span>
 </div>
@@ -106,8 +103,8 @@
 <nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
 <div class="md-grid">
 <ul class="md-tabs__list">
-<li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href=".">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
         
   
     
@@ -117,7 +114,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="envir/">
+<a class="md-tabs__link" href="../envir/">
         
   
     
@@ -127,7 +124,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="git/">
+<a class="md-tabs__link" href="../git/">
         
   
     
@@ -137,7 +134,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="qt/">
+<a class="md-tabs__link" href="../qt/">
         
   
     
@@ -147,7 +144,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="window/">
+<a class="md-tabs__link" href="../window/">
         
   
     
@@ -156,8 +153,8 @@
 
       </a>
 </li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="model/">
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="./">
         
   
     
@@ -178,7 +175,7 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Gold Miner 开发文档" class="md-nav__button md-logo" data-md-component="logo" href="." title="Gold Miner 开发文档">
+<a aria-label="Gold Miner 开发文档" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Gold Miner 开发文档">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 </a>
     Gold Miner 开发文档
@@ -194,83 +191,44 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    Home
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href=".">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
 <span class="md-ellipsis">
     Home
   </span>
 </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-<span class="md-ellipsis">
-      注意事项
-    </span>
-</a>
-<nav aria-label="注意事项" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-<span class="md-ellipsis">
-      命名规范
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-<span class="md-ellipsis">
-      如何编译运行可执行文件？
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="envir/">
+<a class="md-nav__link" href="../envir/">
 <span class="md-ellipsis">
     环境配置
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="git/">
+<a class="md-nav__link" href="../git/">
 <span class="md-ellipsis">
     git 相关
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="qt/">
+<a class="md-nav__link" href="../qt/">
 <span class="md-ellipsis">
     Qt 相关
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="window/">
+<a class="md-nav__link" href="../window/">
 <span class="md-ellipsis">
     Window 层
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="model/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Model 层
   </span>
@@ -285,99 +243,24 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-<span class="md-ellipsis">
-      注意事项
-    </span>
-</a>
-<nav aria-label="注意事项" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-<span class="md-ellipsis">
-      命名规范
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-<span class="md-ellipsis">
-      如何编译运行可执行文件？
-    </span>
-</a>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="index">Index</h1>
-<p>这里是课程 C++ 项目工程管理的开发文档（因为 readme 太长了所以做了个网站，分门别类也比较好找</p>
-<h2 id="_1">注意事项</h2>
-<p>因为如果实现好了一个类，想编译运行，记得把文件加到 CMakeList 文件的 SRC_LIST 里（现在为了保证编译成功只有 main 函数在源文件 list 里</p>
-<p>当前的项目架构</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>.
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>├── CMakeLists.txt
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>├── GoldMiner
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>│   ├── CMakeLists.txt
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>│   ├── doc
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>│   │   └── requirement.md
-<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>│   └── src
-<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>│       ├── app
-<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>│       │   ├── app.cpp
-<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>│       │   └── app.h
-<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>│       ├── common
-<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>│       │   ├── GoldMinerDef.h
-<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>│       │   ├── any.h
-<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>│       │   └── etlbase.h
-<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>│       ├── main.cpp
-<a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>│       ├── model
-<a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>│       │   ├── Model.cpp
-<a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>│       │   └── Model.h
-<a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a>│       ├── viewmodel
-<a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a>│       │   ├── ViewModel.cpp
-<a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a>│       │   └── ViewModel.h
-<a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a>│       └── window
-<a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a>│           ├── CompletePage.cpp
-<a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a>│           ├── CompletePage.h
-<a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a>│           ├── GamePage.cpp
-<a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a>│           ├── GamePage.h
-<a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a>│           ├── StartPage.cpp
-<a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a>│           └── StartPage.h
-<a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a>├── README.md
-<a href="#__codelineno-0-30" id="__codelineno-0-30" name="__codelineno-0-30"></a>└── image
-<a href="#__codelineno-0-31" id="__codelineno-0-31" name="__codelineno-0-31"></a>    └── README
-<a href="#__codelineno-0-32" id="__codelineno-0-32" name="__codelineno-0-32"></a>        └── 1720081886589.png
-</code></pre></div>
-<h3 id="_2">命名规范</h3>
-<ul>
-<li>类名/文件名 - 帕斯卡（Pascal）命名法 <code>ReplacePart.cpp</code></li>
-<li>成员变量名 - <code>m_replacePart</code></li>
-<li>.h 文件要加 <code>#ifndef</code> 等等</li>
-</ul>
-<hr/>
-<h2 id="_3">如何编译运行可执行文件？</h2>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>mkdir build
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>cd build
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>cmake .. -DCMAKE_BUILD_TYPE=Debug -G "Visual Studio 17 2022" -A x64
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>MSBuild ALL_BUILD.vcxproj /t:build /p:Configuration=Debug
-<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>./bin/Debug/GoldMiner.exe
-</code></pre></div>
-<blockquote>
-<p>我还要琢磨一下怎么 release 打包成 zip（后话</p>
-</blockquote>
-<hr/>
+<h1>Model 层</h1>
+<p>负责 model 的同学实现 model 文件夹里的内容</p>
+<p>可能需要实现的</p>
+<ol>
+<li>游戏开始时，生成一定数量的金块和石块，以及钩子</li>
+<li>每隔一段时间（一帧）更新钩子的状态（旋转）</li>
+<li>用户点击后（来自 view model 的信号），伸长钩子</li>
+<li>判断钩子是否碰到了金块或石块，或者到达窗口的边界，要收回钩子</li>
+<li>钩子回收的速度可能与金块或石块的 size 有关（可以后面优化再实现</li>
+<li>改变钩子和金块的位置可以计算位置变化量，调用 updatePosition 函数更新位置</li>
+</ol>
+<p>也可以重写位置变化函数等等</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -401,10 +284,10 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "header.autohide"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="assets/javascripts/bundle.c8d2eff1.min.js"></script>
-<script src="optionalConfig.js"></script>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "header.autohide"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+<script src="../optionalConfig.js"></script>
 <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-<script src="extra-loader.js"></script>
+<script src="../extra-loader.js"></script>
 </body>
 </html>
