@@ -21,6 +21,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -228,11 +231,32 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Model 层
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Model 层
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      与前端的交互方式
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -243,6 +267,19 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      与前端的交互方式
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -250,17 +287,38 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>Model 层</h1>
-<p>负责 model 的同学实现 model 文件夹里的内容</p>
+<p>负责 model 的同学实现 model 和 viewmodel 文件夹里的内容</p>
 <p>可能需要实现的</p>
 <ol>
 <li>游戏开始时，生成一定数量的金块和石块，以及钩子</li>
-<li>每隔一段时间（一帧）更新钩子的状态（旋转）</li>
+<li>每隔一段时间（一帧）更新钩子的状态（旋转）- QTimer 计时器</li>
 <li>用户点击后（来自 view model 的信号），伸长钩子</li>
 <li>判断钩子是否碰到了金块或石块，或者到达窗口的边界，要收回钩子</li>
 <li>钩子回收的速度可能与金块或石块的 size 有关（可以后面优化再实现</li>
 <li>改变钩子和金块的位置可以计算位置变化量，调用 updatePosition 函数更新位置</li>
 </ol>
 <p>也可以重写位置变化函数等等</p>
+<hr/>
+<h2 id="_1">与前端的交互方式</h2>
+<p>前端会传来下面这几个信号：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nl">signal</span><span class="p">:</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">StartToRunGame</span><span class="p">();</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">RunToExit</span><span class="p">();</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">CompleteToNextRun</span><span class="p">();</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">GameClick</span><span class="p">();</span>
+</code></pre></div>
+<p>app 层会用 connect 函数将其链接到 view model 层的相应槽函数，因此你需要完成类似下面的槽函数接受信号，再进一步调用内部方法处理</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">public</span><span class="w"> </span><span class="n">slots</span><span class="o">:</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">GameStart</span><span class="p">();</span><span class="c1">// 改变游戏状态为 Running</span>
+</code></pre></div>
+<p>改变状态后，需要通知前端，改变显示，即需要发送类似下面的信息</p>
+<p>app 层会把这个信息通知到前端</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nl">signals</span><span class="p">:</span><span class="c1">// 声明</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">StateChanged</span><span class="p">(</span><span class="n">GameState</span><span class="w"> </span><span class="n">new_gameState</span><span class="p">);</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1">// 发送</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">emit</span><span class="w"> </span><span class="nf">StateChanged</span><span class="p">(</span><span class="n">Running</span><span class="p">);</span>
+</code></pre></div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
