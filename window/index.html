@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../qt/" rel="prev"/>
+<link href="../common/" rel="prev"/>
 <link href="../model/" rel="next"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-9.5.13" name="generator"/>
@@ -147,6 +147,16 @@
 
       </a>
 </li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../common/">
+        
+  
+    
+  
+  Common 即 App 层
+
+      </a>
+</li>
 <li class="md-tabs__item md-tabs__item--active">
 <a class="md-tabs__link" href="./">
         
@@ -223,6 +233,13 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../common/">
+<span class="md-ellipsis">
+    Common 即 App 层
+  </span>
+</a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -264,9 +281,9 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#view-model">
+<a class="md-nav__link" href="#_4">
 <span class="md-ellipsis">
-      view model 层
+      过关失败界面
     </span>
 </a>
 </li>
@@ -316,9 +333,9 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#view-model">
+<a class="md-nav__link" href="#_4">
 <span class="md-ellipsis">
-      view model 层
+      过关失败界面
     </span>
 </a>
 </li>
@@ -330,8 +347,12 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>Window 层</h1>
-<p>负责 window 的同学实现 viewmodel 和 window 文件夹里的内容</p>
+<p>负责 window 的同学实现 window 文件夹里的内容</p>
+<p>利用一个 main window 统筹管理下面这四个页面</p>
 <h2 id="_1">游戏开始界面</h2>
+<blockquote>
+<p>组长验收完成</p>
+</blockquote>
 <p>需要实现的功能：</p>
 <ol>
 <li>显示游戏背景图片（可以在角落写上游戏说明，就不需要额外的窗口了）</li>
@@ -340,6 +361,9 @@
 <p>开始游戏控件需要发出信号</p>
 <hr/>
 <h2 id="_2">游戏进行界面</h2>
+<blockquote>
+<p>第五点、第六点待完成</p>
+</blockquote>
 <p>需要实现的布局：</p>
 <ol>
 <li>分数显示</li>
@@ -352,6 +376,9 @@
 <p>其中退出按钮接受的用户操作需要发出相应信号</p>
 <hr/>
 <h2 id="_3">过关界面</h2>
+<blockquote>
+<p>组长验收通过</p>
+</blockquote>
 <p>需要：</p>
 <ol>
 <li>显示游戏胜利的画面</li>
@@ -361,8 +388,14 @@
 <p>后续还可以加入道具购买功能等等</p>
 </blockquote>
 <hr/>
-<h2 id="view-model">view model 层</h2>
-<p>连接 window 和 model 层</p>
+<h2 id="_4">过关失败界面</h2>
+<blockquote>
+<p>新的要求，对通关和未通关做出区分</p>
+</blockquote>
+<ol>
+<li>显示游戏失败的画面</li>
+<li>只能重玩本关（有一个 play again 按钮</li>
+</ol>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
